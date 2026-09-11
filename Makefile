@@ -1,5 +1,5 @@
 # Builds the Metropolis and HMC programs for the phi^4 lattice theory.
-# See Relazione/RelazioneMetropolis&HMC.pdf for the physics writeup.
+# See RelazioneMetropolis&HMC.pdf for the physics writeup.
 #
 # Each main program links against either the Metropolis module or the HMC
 # module (both define an `action()` function, so they must not be linked
@@ -11,12 +11,12 @@
 #   make clean           remove bin/
 
 CC      := gcc
-CFLAGS  := -O2 -Wall -ICodici/Include
+CFLAGS  := -O2 -Wall -Icode/Include
 LDLIBS  := -lm
 
 BIN_DIR := bin
-MAIN_DIR := Codici/MainPrograms
-MOD_DIR  := Codici/Modules
+MAIN_DIR := code/MainPrograms
+MOD_DIR  := code/Modules
 
 COMMON_SRCS     := $(MOD_DIR)/geometry/hopping.c $(MOD_DIR)/random/ranlxd.c $(MOD_DIR)/extras/observables.c
 METROPOLIS_SRCS := $(MOD_DIR)/metropolis/metropolis.c

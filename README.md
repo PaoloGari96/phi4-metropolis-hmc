@@ -5,19 +5,19 @@ field theory (magnetization, susceptibility, Binder cumulant, autocorrelation
 / jackknife error analysis, spontaneous symmetry breaking). Written for the
 Fisica Computazionale course.
 
-Full writeup, derivations and plots: `Relazione/RelazioneMetropolis&HMC.pdf`.
+Full writeup, derivations and plots: `RelazioneMetropolis&HMC.pdf`.
 
 ## Layout
 
 ```
-Codici/Include/          headers (lattice geometry, RNG, parameter structs)
-Codici/Modules/          shared building blocks
+code/Include/          headers (lattice geometry, RNG, parameter structs)
+code/Modules/          shared building blocks
   geometry/hopping.c        nearest-neighbor table for the lattice
   random/ranlxd.c           ranlxd RNG (M. Luescher)
   extras/observables.c      magnetization observables (M, |M|, M^2, M^4)
   metropolis/metropolis.c   local Metropolis update + action
   hmc/hmc.c                 HMC update (leapfrog + accept/reject) + action
-Codici/MainPrograms/     one .c file per executable (see below)
+code/MainPrograms/     one .c file per executable (see below)
 ```
 
 Note: `metropolis.c` and `hmc.c` both define `action()`, so a given binary
